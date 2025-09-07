@@ -50,9 +50,9 @@ export function BrandingForm({ tenantId }: BrandingFormProps) {
   const form = useForm<BrandingFormValues>({
     resolver: zodResolver(brandingSchema),
     defaultValues: {
-      tenantId: tenantId ?? '',
-      isRectangular: true,
-      logoUrl: [],
+      tenant_id: tenantId ?? '',
+      is_rectangular: true,
+      logo_url: [],
       // Default Tailwind Indigo and Orange
       primary_50: primaryShades[0],
       primary_100: primaryShades[1],
@@ -111,7 +111,7 @@ export function BrandingForm({ tenantId }: BrandingFormProps) {
   // Sync logoUrl in form state when logos change
   useEffect(() => {
     setValue(
-      'logoUrl',
+      'logo_url',
       logos.map((l) => l.url),
       { shouldValidate: true }
     );
@@ -154,6 +154,7 @@ export function BrandingForm({ tenantId }: BrandingFormProps) {
 
   const onSubmit = (values: BrandingFormValues) => {
     alert(JSON.stringify(values, null, 2));
+    console.log(values);
   };
 
   return (
@@ -168,7 +169,7 @@ export function BrandingForm({ tenantId }: BrandingFormProps) {
             {/* Tenant ID */}
             <FormField
               control={control}
-              name="tenantId"
+              name="tenant_id"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Tenant ID</FormLabel>
@@ -184,7 +185,7 @@ export function BrandingForm({ tenantId }: BrandingFormProps) {
           <div className="flex flex-col gap-4 border-b py-4">
             <FormField
               control={form.control}
-              name="isRectangular"
+              name="is_rectangular"
               render={({ field }) => (
                 <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
                   <div className="space-y-0.5 flex flex-col gap-2">

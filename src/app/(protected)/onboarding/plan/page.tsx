@@ -10,7 +10,10 @@ type BuyPlanPageProps = {
 
 async function BuyPlanPage({ searchParams }: BuyPlanPageProps) {
   const resolvedSearchParams = await searchParams;
-  const tenantId = resolvedSearchParams?.tenantId;
+  const tenantId = Array.isArray(resolvedSearchParams?.tenantId)
+    ? resolvedSearchParams?.tenantId[0] ||
+      '84c9e931-3b7c-4b69-8e26-5a116e7a8f64'
+    : resolvedSearchParams?.tenantId || '84c9e931-3b7c-4b69-8e26-5a116e7a8f64';
 
   const supabase = await getServerClient();
   const { data } = await supabase.auth.getUser();
@@ -25,7 +28,7 @@ async function BuyPlanPage({ searchParams }: BuyPlanPageProps) {
               <span className="text-sm text-foreground">Hi, {userEmail},</span>
             )}
             <p className="text-sm text-muted-foreground">
-              You company has been created. Now buy the plan which suits your
+              Upgrade to enjoy more features. Now buy the plan which suits your
               needs.
             </p>
           </div>
@@ -33,8 +36,8 @@ async function BuyPlanPage({ searchParams }: BuyPlanPageProps) {
         </div>
 
         <div className="py-8 flex flex-col gap-16 lg:flex-row lg:items-center lg:justify-between">
-          <Steps step={1} />
-          <PricingForm />
+          <Steps step={3} />
+          <PricingForm tenantId={tenantId as string} />
         </div>
       </section>
     </main>

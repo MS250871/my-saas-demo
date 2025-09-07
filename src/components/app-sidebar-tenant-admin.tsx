@@ -30,7 +30,6 @@ export function AppSidebarTenantAdmin({
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavWorkspace items={tenantAdminLinks.main} />
         <NavSaas items={tenantAdminLinks.saas} />
         <NavSupport items={tenantAdminLinks.secondary} />
       </SidebarContent>

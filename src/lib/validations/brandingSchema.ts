@@ -23,9 +23,9 @@ export const SHADE_LABELS = [
 
 // Utility: Accept a string or array of strings, and always return an array of URLs
 export const brandingSchema = z.object({
-  tenantId: z.uuid(),
-  isRectangular: z.boolean(),
-  logoUrl: z.array(z.url()).nonempty('Please provide at least one logo URL.'),
+  tenant_id: z.uuid(),
+  is_rectangular: z.boolean(),
+  logo_url: z.array(z.url()).nonempty('Please provide at least one logo URL.'),
   // All primary shades
   primary_50: z
     .string()

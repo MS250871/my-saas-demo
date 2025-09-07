@@ -7,20 +7,16 @@ const steps = [
     desc: 'Please give details about your organization.',
   },
   {
-    title: 'Buy Plan',
-    desc: 'Please choose and buy your plan.',
+    title: 'Configure Domain',
+    desc: 'Configure your whitelabel domain.',
   },
   {
     title: 'Provide Branding Inputs',
     desc: 'Please provide your branding information.',
   },
   {
-    title: 'Choose frontend template',
-    desc: 'Choose the marketing pages template that best fits your organization.',
-  },
-  {
-    title: 'Configure Domain',
-    desc: 'Configure your whitelabel domain.',
+    title: 'Buy Plan',
+    desc: 'Please choose and buy your plan.',
   },
 ];
 

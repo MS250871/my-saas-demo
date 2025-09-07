@@ -9,6 +9,7 @@ import {
 } from './ui/sidebar';
 import Link from 'next/link';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 export function NavSaas({
   items,
@@ -21,7 +22,7 @@ export function NavSaas({
       <SidebarMenu>
         {items.map((item) => (
           <SidebarMenuItem key={item.href}>
-            <SidebarMenuButton asChild>
+            <SidebarMenuButton asChild isActive={usePathname() === item.href}>
               <Link href={item.href}>
                 <item.icon />
                 {item.label}

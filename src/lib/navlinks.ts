@@ -13,8 +13,13 @@ import {
   UserPlus,
   HandHelping,
   BookOpen,
+  LucideUsersRound,
+  Files,
 } from 'lucide-react';
 import { FaFacebook, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { GiTeacher, GiSkills } from 'react-icons/gi';
+import { PiStudentBold } from 'react-icons/pi';
+import { CgWebsite } from 'react-icons/cg';
 
 // Nav and Legal Links Types
 export interface SimpleNavLink {
@@ -55,7 +60,6 @@ export const tenantAdminLinks: {
   secondary: TenantNavLink[];
 } = {
   main: [
-    { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/admin/company', label: 'Company Details', icon: Building },
     { href: '/admin/branding', label: 'Branding', icon: Presentation },
     {
@@ -66,10 +70,29 @@ export const tenantAdminLinks: {
     { href: '/admin/users', label: 'Users', icon: UsersRound },
   ],
   saas: [
+    { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    {
+      href: '/admin/marketing-website',
+      label: 'Marketing Website',
+      icon: CgWebsite,
+    },
     { href: '/admin/leads', label: 'Leads', icon: UserPlus },
+    { href: '/admin/teachers', label: 'Teachers', icon: GiTeacher },
+    { href: '/admin/students', label: 'Students', icon: PiStudentBold },
+    { href: '/admin/batches', label: 'Batches', icon: LucideUsersRound },
     { href: '/admin/courses', label: 'Courses', icon: NotebookText },
+    { href: '/admin/resources', label: 'Resources', icon: Files },
+    {
+      href: '/admin/assessments',
+      label: 'Assessments',
+      icon: BookOpenCheck,
+    },
     { href: '/admin/questions', label: 'Questions', icon: CircleQuestionMark },
-    { href: '/admin/tests', label: 'Tests', icon: BookOpenCheck },
+    {
+      href: '/admin/skills',
+      label: 'Skills',
+      icon: GiSkills,
+    },
     {
       href: '/admin/jobs',
       label: 'Jobs',
@@ -78,7 +101,6 @@ export const tenantAdminLinks: {
   ],
   secondary: [
     { href: '/admin/help', label: 'Get Help', icon: HandHelping },
-    { href: '/admin/docs', label: 'Docs', icon: BookOpen },
     { href: '/admin/settings', label: 'Settings', icon: Settings },
   ],
 };

@@ -23,7 +23,7 @@ async function BrandingPage({ searchParams }: BrandingPageProps) {
 
   return (
     <main className="max-w-7xl mx-auto">
-      <section className="relative isolate overflow-hidden px-6 py-24 sm:py-20 lg:px-8">
+      <section className="relative isolate px-6 py-24 sm:py-20 lg:px-8">
         <div className="w-full flex flex-col gap-4 md:flex-row md:items-center md:justify-between ">
           <div className="max-w-lg">
             {userEmail && (
@@ -39,10 +39,8 @@ async function BrandingPage({ searchParams }: BrandingPageProps) {
 
         <div className="py-8 flex flex-col gap-16 lg:flex-row lg:items-start lg:justify-between lg:relative">
           {/* Sticky Steps Sidebar */}
-          <div className="lg:w-1/3">
-            <div className="sticky top-24">
-              <Steps step={2} />
-            </div>
+          <div className="lg:w-1/3 self-stretch sticky top-24">
+            <Steps step={2} />
           </div>
           {/* Form Content */}
           <div className="lg:w-2/3 w-full">

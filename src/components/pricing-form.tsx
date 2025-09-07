@@ -8,7 +8,9 @@ function classNames(...classes: (string | false | null | undefined)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-function PricingForm() {
+type PricingFormProps = { tenantId: string };
+
+function PricingForm({ tenantId }: PricingFormProps) {
   return (
     <div className="w-full mt-16 border rounded-3xl p-8">
       <p className="text-3xl font-bold text-foreground">
